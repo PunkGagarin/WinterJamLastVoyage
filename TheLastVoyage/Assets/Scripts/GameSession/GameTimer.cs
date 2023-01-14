@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace GameSession {
         [SerializeField]
         private int _startTimer;
 
-        public Action OnTimerTick = delegate { };
+        public Action<int> OnTimerTick = delegate { };
 
         public Action OnTimerFinished = delegate { };
 
@@ -40,11 +41,24 @@ namespace GameSession {
 
         private void UpdateTime(int time) {
             _currentIntTimer = time;
+            UpdateTimerUI(time);
+
             if (time == 0) {
                 OnTimerFinished.Invoke();
             } else {
-                OnTimerTick.Invoke();
+                OnTimerTick.Invoke(time);
             }
+        }
+
+        private void UpdateTimerUI(int time) {
+            _timerText.text = GetProperTimerFormat(time);
+        }
+
+        private string GetProperTimerFormat(int time) {
+            int minutes = time / 60;
+            int seconds = time % 60;
+            string s = $"{minutes:D2}:{seconds:D2}";
+            return s;
         }
 
         public void StartTimer() {
