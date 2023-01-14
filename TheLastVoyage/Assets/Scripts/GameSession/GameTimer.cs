@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 
@@ -55,10 +54,8 @@ namespace GameSession {
         }
 
         private string GetProperTimerFormat(int time) {
-            int minutes = time / 60;
-            int seconds = time % 60;
-            string s = $"{minutes:D2}:{seconds:D2}";
-            return s;
+            TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+            return $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
         }
 
         public void StartTimer() {
