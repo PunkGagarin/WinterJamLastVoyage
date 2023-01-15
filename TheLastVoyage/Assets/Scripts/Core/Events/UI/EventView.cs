@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using events;
-using GameSession.Events;
+﻿using System.Collections.Generic;
+using Core.Events.GameEvents;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Events {
+namespace Core.Events.UI {
 
     public class EventView : MonoBehaviour {
+
+        private const string DefaultAcceptText = "Accept";
+        private const string DefaultRejectText = "Reject";
 
         private BaseGameEvent _currentEvent;
 
@@ -19,14 +20,11 @@ namespace Events {
         private TextMeshProUGUI _eventText;
 
         [SerializeField]
-        private Transform _buttonsParent;
-
-        [SerializeField]
         private Button _acceptButton;
 
         [SerializeField]
         private Button _rejectButton;
-        
+
         [SerializeField]
         private Button _okayButton;
 
@@ -47,21 +45,20 @@ namespace Events {
         }
 
         private void ShowEventText(string currentEventAcceptedText) {
-            
         }
 
         private void RejectEvent() {
             HideButtons();
-            _currentEvent.Reject();
+
             ShowEventText(_currentEvent.rejectedText);
-            throw new NotImplementedException();
+            _currentEvent.Reject();
         }
 
         public void UpdateUiForEvent(BaseGameEvent baseGameEvent) {
             ShowContent();
             ShowButtons();
             _currentEvent = baseGameEvent;
-            
+
             _eventText.text = baseGameEvent.gameEventText;
             if (baseGameEvent.acceptButtonText != null) {
                 _acceptButton.GetComponentInChildren<TextMeshProUGUI>().text = baseGameEvent.acceptButtonText;
@@ -85,11 +82,17 @@ namespace Events {
             _rejectButton.gameObject.SetActive(true);
             ShowOkayButton();
         }
-        
+
         private void HideButtons() {
+            SetDefaultButtonsText();
             _acceptButton.gameObject.SetActive(false);
             _rejectButton.gameObject.SetActive(false);
             ShowOkayButton();
+        }
+
+        private void SetDefaultButtonsText() {
+            _acceptButton.GetComponentInChildren<TextMeshProUGUI>().text = DefaultAcceptText;
+            _acceptButton.GetComponentInChildren<TextMeshProUGUI>().text = DefaultRejectText;
         }
 
         private void ShowOkayButton() {

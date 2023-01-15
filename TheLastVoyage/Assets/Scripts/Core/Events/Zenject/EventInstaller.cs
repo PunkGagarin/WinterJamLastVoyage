@@ -1,5 +1,10 @@
-﻿using GameSession.Events;
+﻿using Core.Events;
+using Core.Events.Pools;
+using Core.Events.Types;
+using Core.Events.UI;
+using GameSession;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace events {
@@ -8,15 +13,40 @@ namespace events {
 
 
         [SerializeField]
-        private EventController _eventController;
+        private PhysEventController _physEventController;
+        
+        [SerializeField]
+        private TimeEventController _timeEventController;
+
+        [SerializeField]
+        private EventView _eventView;
+        
+        [SerializeField]
+        private GameTimer _gameTimer;
 
         public override void InstallBindings() {
             Container.Bind<GameEventPool>()
                 .FromNew()
                 .AsSingle();
+            
+            Container.Bind<TimeEventPool>()
+                .FromNew()
+                .AsSingle();
 
-            Container.Bind<EventController>()
-                .FromInstance(_eventController)
+            Container.Bind<EventView>()
+                .FromInstance(_eventView)
+                .AsSingle();
+
+            Container.Bind<GameTimer>()
+                .FromInstance(_gameTimer)
+                .AsSingle();
+
+            Container.Bind<PhysEventController>()
+                .FromInstance(_physEventController)
+                .AsSingle();
+            
+            Container.Bind<TimeEventController>()
+                .FromInstance(_timeEventController)
                 .AsSingle();
         }
     }

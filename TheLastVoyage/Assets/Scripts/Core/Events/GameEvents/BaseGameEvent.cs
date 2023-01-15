@@ -1,29 +1,36 @@
-﻿using System.Collections.Generic;
-using GameSession.Events;
+﻿using Core.Events.Types;
+using events;
 using UnityEngine;
 
-namespace events {
+namespace Core.Events.GameEvents {
 
-    public abstract class BaseGameEvent : MonoBehaviour {
-
-        [field: SerializeField]
-        public string gameEventText { get; }
+    
+    public abstract class BaseGameEvent : ScriptableObject, IGameEvent {
 
         [field: SerializeField]
-        public string acceptButtonText { get; set; }
-        
-        [field: SerializeField]
-        public string rejectButtonText { get; set; }
+        public BaseEventType baseEventType { get; private set; }
 
         [field: SerializeField]
-        public string acceptedText { get; }
+        [field:TextAreaAttribute(5,20)]
+        public string gameEventText { get; private set; }
 
         [field: SerializeField]
-        public string rejectedText { get; }
+        public string acceptButtonText { get; private set; }
+
+        [field: SerializeField]
+        public string rejectButtonText { get; private set; }
+
+        [field: SerializeField]
+        [field:TextAreaAttribute(5,20)]
+        public string acceptedText { get; private set; }
+
+        [field: SerializeField]
+        [field:TextAreaAttribute(5,20)]
+        public string rejectedText { get; private set; }
 
         // [SerializeField]
         //todo: for future random weight pickup
-        private int _weight;
+        // private int _weight;
 
         public abstract void Apply();
 

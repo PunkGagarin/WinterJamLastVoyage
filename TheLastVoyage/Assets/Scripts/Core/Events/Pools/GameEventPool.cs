@@ -1,8 +1,14 @@
-﻿namespace events {
+﻿using System.Linq;
+using Core.Events.GameEvents.PhysEvents;
+using UnityEngine;
 
-    public class GameEventPool : BasePool<BaseGameEvent> {
-        
-        
+namespace Core.Events.Pools {
+
+    public class GameEventPool : BasePool<BasePhysicalEvent> {
+
+        public override void InitPool() {
+            _events = Resources.LoadAll<BasePhysicalEvent>("Events/Time").ToList();
+        }
     }
 
 }

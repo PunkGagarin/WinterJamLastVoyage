@@ -1,16 +1,22 @@
-﻿using System;
+﻿using Core.Events.GameEvents.TimeEvents;
+using Core.Events.Pools;
+using Core.Events.UI;
 using GameSession;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
 
-namespace events {
+namespace Core.Events {
 
     public class TimeEventController : MonoBehaviour {
 
         private int _eventTimer;
 
+        [Inject]
         private TimeEventPool _timeEventPool;
+
+        [Inject]
+        private EventView _eventView;
 
         [Inject]
         private GameTimer _timer;
@@ -21,11 +27,9 @@ namespace events {
         [SerializeField]
         private int _maxEventTimer = 30;
 
-        public Action<BaseGameEvent> OnTimerEvent = delegate { };
-
-
         private void Awake() {
             _timer.OnTimerTick += OnTimerTickHandle;
+            _timeEventPool.InitPool();
         }
 
         private void OnTimerTickHandle(int time) {
@@ -39,9 +43,16 @@ namespace events {
         }
 
         private void ApplyTimeEvent() {
-            //todo: implement
-            BaseGameEvent gameEvent = _timeEventPool.GetRandomEvent();
-            OnTimerEvent.Invoke(gameEvent);
+            BaseTimeEvent gameEvent = _timeEventPool.GetRandomPoolEvent();
+            EventHandle(gameEvent);
+        }
+
+        private void EventHandle(BaseTimeEvent gameEvent) {
+            UpdateUI(gameEvent);
+        }
+
+        private void UpdateUI(BaseTimeEvent gameEvent) {
+            _eventView.UpdateUiForEvent(gameEvent);
         }
 
         private int CalculateNewEventTimer() {

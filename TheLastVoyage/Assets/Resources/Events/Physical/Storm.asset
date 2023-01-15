@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61525f76ec5b4295afaccda95df0ff12, type: 3}
+  m_Name: Storm
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: A severe storm hits your ship, with winds howling
+    and waves crashing against the hull. Your crew struggles to keep the ship steady
+    as the storm rages on. Hunger levels increase rapidly and the ship's health is
+    at risk. You must decide whether to ride out the storm, risking further damage
+    but keeping the crew safe, or try to outrun it, saving time but risking more
+    damage and increasing hunger levels. Your decision will affect the ship's health,
+    crew's morale and your time to reach the safe port before the ship sinks.
+  <acceptButtonText>k__BackingField: Ride
+  <rejectButtonText>k__BackingField: Outrun
+  <acceptedText>k__BackingField: You decide to ride out the storm, causing some damage
+    but keeping the crew safe. Hunger levels increase, but the crew's morale improves
+    as they feel safe and secure. However, the storm takes time, and you must now
+    repair the ship and find food and water to restore the crew's energy.
+  <rejectedText>k__BackingField: You decide to outrun the storm, saving time and
+    resources but causing damage and increasing hunger levels. Ship is able to avoid
+    more severe damage and you can reach the safe port faster.
+  <type>k__BackingField: 1
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _moraleBonus: 10
+  _hungerDrop: 5
+  _timeCost: 20
+  _rejectHungerDrop: 15
+  _damage: 10

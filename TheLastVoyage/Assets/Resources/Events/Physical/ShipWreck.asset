@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3c4141c39744cca154759764eae467, type: 3}
+  m_Name: Shipwreck
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: Your ship encounters a shipwreck in the open sea,
+    you can see that the ship is abandoned and it's half submerged in the water.
+    You know that shipwrecks are a source of valuable resources, but also it can
+    be dangerous. You must decide whether to investigate the shipwreck and risk losing
+    time and resources or continue on your voyage and miss out on valuable resources.
+  <acceptButtonText>k__BackingField: Search
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to investigate the shipwreck, you order
+    your crew to prepare the ship to dock next to the wreck and you go to inspect
+    it. You find valuable resources such as food, water, and medical supplies. However,
+    keep in mind that the investigation takes time and resources.
+  <rejectedText>k__BackingField: You decide to continue on your voyage, you order
+    your crew to set a course that will take you away from the shipwreck. You might
+    miss out on valuable resources but you save time and resources. However, the
+    crew members are disappointed and the morale decreases, you keep a steady pace
+    towards your goal, a safe port before your ship sinks, but you are aware of the
+    risk you are taking.
+  <type>k__BackingField: 0
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _hungerBonus: 15
+  _timeCost: 5
+  _moraleDecrease: 15

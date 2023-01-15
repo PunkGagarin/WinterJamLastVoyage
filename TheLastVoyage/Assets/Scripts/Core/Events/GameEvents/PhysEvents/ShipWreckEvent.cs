@@ -1,19 +1,19 @@
 ﻿using Core.Control;
-using events;
 using GameSession;
 using UnityEngine;
 using Zenject;
 
-namespace Core.Events.GameEvents {
+namespace Core.Events.GameEvents.PhysEvents {
 
-    public class ShipWreckEvent : BaseGameEvent, IGameEvent {
+    [CreateAssetMenu(menuName = "GameEvent/Physical/Shipwreck", fileName = "Shipwreck")]
+    public class ShipWreckEvent : BasePhysicalEvent, IGameEvent {
 
         [Inject]
         private GameTimer _gameTimer;
 
         [Inject]
         private ShipCharacteristics _shipCharacteristics;
-        
+
         [Header("Accept")]
         [SerializeField]
         private int _hungerBonus;
@@ -24,8 +24,7 @@ namespace Core.Events.GameEvents {
         [Header("Reject")]
         [SerializeField]
         private int _moraleDecrease;
-        
-        
+
 
         public override void Apply() {
             _shipCharacteristics.DecreaseHungerIndicator(_hungerBonus);

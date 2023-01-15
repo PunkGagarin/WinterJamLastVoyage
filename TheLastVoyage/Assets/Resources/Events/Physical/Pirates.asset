@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35e299ca1e341d7a5b6db9e815115ee, type: 3}
+  m_Name: Pirates
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: 
+  <acceptButtonText>k__BackingField: 
+  <rejectButtonText>k__BackingField: 
+  <acceptedText>k__BackingField: 
+  <rejectedText>k__BackingField: 
+  <type>k__BackingField: 0
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _acceptDamage: 20
+  _acceptTimeCost: 15
+  _acceptMoraleDrop: 10
+  _rejectTimeCost: 5
+  _rejectMoraleDrop: 5
+  _rejectHungerDrop: 5

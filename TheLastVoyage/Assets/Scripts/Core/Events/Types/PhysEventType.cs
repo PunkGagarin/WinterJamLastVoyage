@@ -1,6 +1,6 @@
-﻿namespace GameSession.Events.Types {
+﻿namespace Core.Events.Types {
 
-    public enum GameEventType {
+    public enum PhysEventType {
         Shipwreck,
         Storm,
         Pirates,

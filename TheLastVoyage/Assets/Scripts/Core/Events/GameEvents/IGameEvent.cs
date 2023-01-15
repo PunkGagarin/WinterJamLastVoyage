@@ -1,6 +1,4 @@
-﻿using GameSession.Events;
-
-namespace Core.Events.GameEvents {
+﻿namespace Core.Events.GameEvents {
 
     public interface IGameEvent {
 
