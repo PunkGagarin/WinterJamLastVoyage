@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Core.Events.GameEvents.TimeEvents {
 
-    [CreateAssetMenu(menuName = "GameEvent/Physical/Storm", fileName = "Storm")]
+    [CreateAssetMenu(menuName = "GameEvent/Time/Mutiny", fileName = "Mutiny")]
     public class Mutiny : BaseTimeEvent, IGameEvent {
 
         [Inject]

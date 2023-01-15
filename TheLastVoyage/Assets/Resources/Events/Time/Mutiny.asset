@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61525f76ec5b4295afaccda95df0ff12, type: 3}
+  m_Script: {fileID: 11500000, guid: 001a63a1066b4701ab8ffc0d397634da, type: 3}
   m_Name: Mutiny
   m_EditorClassIdentifier: 
   <baseEventType>k__BackingField: 0
@@ -20,8 +20,6 @@ MonoBehaviour:
   <rejectedText>k__BackingField: 
   <type>k__BackingField: 0
   <mapObjectSprite>k__BackingField: {fileID: 0}
-  _moraleBonus: 0
-  _hungerDrop: 0
-  _timeCost: 0
-  _rejectHungerDrop: 0
-  _damage: 0
+  _moraleBonus: 10
+  _timeCost: 15
+  _rejectedMoraleDrop: 20

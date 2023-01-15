@@ -1,4 +1,6 @@
-﻿using Core.Control;
+﻿using System;
+using Core.Control;
+using Core.Events.Types;
 using GameSession;
 using UnityEngine;
 using Zenject;
@@ -24,6 +26,10 @@ namespace Core.Events.GameEvents.PhysEvents {
         [Header("Reject")]
         [SerializeField]
         private int _moraleDecrease;
+
+        private void Awake() {
+            type = PhysEventType.Shipwreck;
+        }
 
 
         public override void Apply() {
