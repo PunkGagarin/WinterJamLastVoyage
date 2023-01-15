@@ -1,11 +1,17 @@
 using System;
+using Core.Events.UI;
 using UnityEngine;
+using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Core.Control {
     public class WaterSpawner : MonoBehaviour {
 
         [SerializeField] 
         private GameObject _waterPrefab;
+        
+        [SerializeField] 
+        private GameObject _waterEventPrefab;
 
         [SerializeField] 
         private Transform _waterSpawnPoint;
@@ -15,6 +21,12 @@ namespace Core.Control {
 
         [SerializeField] 
         private WaterController _firstWaterController;
+        
+        [Inject]
+        private EventView _eventView;
+
+       [Inject]
+        private DiContainer _diContainer;
 
         private void Start() {
             _firstWaterController.shipController = _shipController;
@@ -24,14 +36,22 @@ namespace Core.Control {
         }
 
         private void SpawnWaterTile() {
-            var water = Instantiate(_waterPrefab);
+            
+            var waterPrefab = _waterEventPrefab;
+            
+            var water = Instantiate(waterPrefab);
             water.transform.position = _waterSpawnPoint.position;
             var waterController = water.GetComponent<WaterController>();
             waterController.OnEnter.AddListener(SpawnWaterTile);
             waterController.OnEnterDestroy.AddListener(() => Destroy(water.gameObject));
             waterController.shipController = _shipController;
+            waterController.GameEventTriggerGameobject.SetActive(false);
             
-            Destroy(water.gameObject, 30f);
+            if (Random.Range(0,100) > 65) {
+                waterController.GameEventTriggerGameobject.SetActive(true);
+               var eventTrigger = _diContainer.InstantiateComponent<GameEventTrigger>(waterController.GameEventTriggerGameobject);
+               eventTrigger.SetActive(true);
+            }
         }
     }
 }
