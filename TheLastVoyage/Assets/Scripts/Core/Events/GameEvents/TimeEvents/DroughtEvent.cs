@@ -4,10 +4,10 @@ using GameSession;
 using UnityEngine;
 using Zenject;
 
-namespace Core.Events.GameEvents.PhysEvents {
+namespace Core.Events.GameEvents.TimeEvents {
 
-    [CreateAssetMenu(menuName = "GameEvent/Physical/Storm", fileName = "Storm")]
-    public class StormEvent : BasePhysicalEvent, IGameEvent {
+    [CreateAssetMenu(menuName = "GameEvent/Time/Drought", fileName = "Drought")]
+    public class DroughtEvent : BaseTimeEvent, IGameEvent {
 
         [Inject]
         private GameTimer _gameTimer;
@@ -17,35 +17,35 @@ namespace Core.Events.GameEvents.PhysEvents {
 
         [Header("Accept")]
         [SerializeField]
-        private int _moraleBonus;
+        private int _moraleBonus = 5;
         
         [SerializeField]
-        private int _hungerDrop;
+        private int _timeCost = 15;
         
         [SerializeField]
-        private int _timeCost;
+        private int _acceptedHungerDrop = 5;
 
         [Header("Reject")]
         [SerializeField]
-        private int _rejectHungerDrop;
+        private int _rejectedMoraleDrop = 10;
         
         [SerializeField]
-        private int _damage;
+        private int _rejectedHungerDrop = 5;
 
         private void Awake() {
-            type = PhysEventType.Storm;
+            type = TimeEventType.Drought;
         }
 
 
         public override void Apply() {
             _shipCharacteristics.IncreaseMoraleIndicator(_moraleBonus);
-            _shipCharacteristics.DecreaseHungerIndicator(_hungerDrop);
+            _shipCharacteristics.DecreaseHungerIndicator(_acceptedHungerDrop);
             _gameTimer.DecreaseTime(_timeCost);
         }
 
         public override void Reject() {
-            _shipCharacteristics.DecreaseHungerIndicator(_rejectHungerDrop);
-            _shipCharacteristics.DecreaseHealthIndicator(_damage);
+            _shipCharacteristics.DecreaseMoraleIndicator(_rejectedMoraleDrop);
+            _shipCharacteristics.DecreaseHungerIndicator(_rejectedHungerDrop);
         }
     }
 

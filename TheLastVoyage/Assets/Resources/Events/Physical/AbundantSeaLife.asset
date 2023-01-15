@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fb0330284b4a5aa3cb3b3f55fdf851, type: 3}
+  m_Name: AbundantSeaLife
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: While sailing, the crew spots an area with an abundance
+    of sea life, such as fish, whales, and dolphins. You must decide whether to take
+    advantage of this opportunity or continue on your journey.
+  <acceptButtonText>k__BackingField: Fish
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to take advantage of this opportunity,
+    you order the crew to fish or hunt the sea life, this could lead to the replenishment
+    of food supplies and the improvement of morale among the crew. However, this
+    could also lead to overfishing or hunting, which could have a negative impact
+    on the sea life and the environment.
+  <rejectedText>k__BackingField: You decide to continue on your journey, you believe
+    that it's not necessary or it's too risky to take advantage of this opportunity.
+    However, this could lead to the crew being disappointed and missing out on the
+    opportunity to replenish food supplies.
+  <type>k__BackingField: 6
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _hungerBonusMin: 10
+  _hungerBonusMax: 35
+  _timeLost: 15
+  _moraleBonus: 10
+  _moraleDrop: 10

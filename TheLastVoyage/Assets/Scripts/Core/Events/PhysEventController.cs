@@ -19,12 +19,12 @@ namespace Core.Events {
             _gameEventPool.InitPool();
         }
 
-        private void UpdateUI(BaseGameEvent baseGameEvent) {
-            _eventView.UpdateUiForEvent(baseGameEvent);
-        }
-
         public void EventHandle(BasePhysicalEvent gameEvent) {
             UpdateUI(gameEvent);
+        }
+
+        private void UpdateUI(BaseGameEvent baseGameEvent) {
+            _eventView.UpdateUiForEvent(baseGameEvent);
         }
 
         public BasePhysicalEvent GetRandomEvent() {

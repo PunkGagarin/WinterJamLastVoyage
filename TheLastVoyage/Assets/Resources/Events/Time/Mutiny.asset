@@ -13,11 +13,23 @@ MonoBehaviour:
   m_Name: Mutiny
   m_EditorClassIdentifier: 
   <baseEventType>k__BackingField: 0
-  <gameEventText>k__BackingField: 
-  <acceptButtonText>k__BackingField: 
-  <rejectButtonText>k__BackingField: 
-  <acceptedText>k__BackingField: 
-  <rejectedText>k__BackingField: 
+  <gameEventText>k__BackingField: Tensions are high among your crew, some of them
+    are discontent with the way things are going. They are starting to question your
+    decisions and your ability to lead. Rumors of mutiny are circulating among the
+    crew. You must decide how to handle this situation before it escalates.
+  <acceptButtonText>k__BackingField: Speak
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to address the issue head-on, you call
+    a meeting with your crew and you listen to their complaints and concerns. You
+    assure them that you are doing your best to keep them safe and to reach the safe
+    port. You promise to take their suggestions and feedback into account. You also
+    remind them of the danger of mutiny and the consequences of their actions. Your
+    crew calms down and their morale improves but it takes time to repair the relationship.
+  <rejectedText>k__BackingField: You decide to ignore the problem and hope that it
+    will go away on its own. But the discontent among your crew grows and the rumors
+    of mutiny become more persistent. You start to lose the trust of your crew, and
+    their morale drops. You must now deal with the consequences of your inaction,
+    and try to regain the trust of your crew, but it will take more time and resources.
   <type>k__BackingField: 0
   <mapObjectSprite>k__BackingField: {fileID: 0}
   _moraleBonus: 10

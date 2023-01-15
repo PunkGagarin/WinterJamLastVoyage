@@ -2,10 +2,12 @@
 
     public enum TimeEventType {
         Mutiny,
-        MonsterAttack,
         Drought,
         InfectionOutbreak,
-        FireOnBoard
+        FireOnBoard,
+        FoodShortage,
+        FairWinds,
+        LuckyFishCatch
     }
 
 }

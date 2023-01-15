@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6756bc158049679ba79cf7f768e8d8, type: 3}
+  m_Name: FoodShortage
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: Your ship is running low on food supplies and the
+    crew is starting to feel the effects of hunger. You must decide how to handle
+    the situation, as the food shortage can affect the crew's health, morale, and
+    your journey.
+  <acceptButtonText>k__BackingField: Find food
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to take immediate action to find more
+    food. You order the crew to ration the food supplies, and you start searching
+    for food sources, such as nearby islands or passing ships. You also order the
+    crew to hunt for food, fish and gather fruits and nuts if possible. Your decision
+    takes time and resources, but it prevents the crew from starving and keeps the
+    crew healthy.
+  <rejectedText>k__BackingField: You decide to ignore the problem and hope that it
+    will go away on its own. But the food supplies continue to decrease, and the
+    crew's hunger level increases. You must now deal with the consequences of your
+    inaction, and try to find food, but it will take more time and resources, and
+    the morale of the crew is affected. Additionally, the ship's navigation and safety
+    are compromised.
+  <type>k__BackingField: 4
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _moraleBonus: 10
+  _timeCost: 15
+  _rejectedMoraleDrop: 20

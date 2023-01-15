@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7d2d3f568f4b849fdf6ae4ec1fcec3, type: 3}
+  m_Name: FireOnBoard
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: A fire breaks out on the ship, caused by a malfunction
+    or human error. The flames are quickly spreading and the heat is intense. You
+    must decide how to handle the situation, as the fire can affect the ship's health,
+    the crew's morale, and your journey.
+  <acceptButtonText>k__BackingField: Action
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to take immediate action to put out the
+    fire. You order the crew to use the ship's fire extinguishers and to form a bucket
+    brigade. You also order the crew to evacuate the affected areas and to take safety
+    measures. Your decision takes time and resources, but it prevents the fire from
+    spreading further and keeps the ship and the crew safe.
+  <rejectedText>k__BackingField: You decide to ignore the problem and hope that it
+    will go away on its own. But the fire continues to spread, affecting more and
+    more areas of the ship. You must now deal with the consequences of your inaction,
+    and try to put out the fire, but it will take more time and resources, and the
+    morale of the crew is affected.
+  <type>k__BackingField: 3
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _moraleBonus: 15
+  _timeCost: 15
+  _rejectedMoraleDrop: 10
