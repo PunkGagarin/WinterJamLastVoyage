@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +28,25 @@ namespace Core.Control {
             RotateThings(); 
         }
         
+        private void OnTriggerEnter(Collider other) {
+            if (other.gameObject.tag.Contains("Coast")) {
+                _speedSlider.value = 0;
+                _offset = 0;
+                //_ship.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+                StartCoroutine(RotateShip());
+            }
+        }
+
+        private IEnumerator RotateShip() {
+            float elapsed = 0f;
+            while (elapsed < 3f) {
+                elapsed += Time.deltaTime;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, 0f, 0f),  Time.deltaTime * 3);
+                yield return null;
+            }
+        }
+
         private void RotateThings()
         {
             _ship.transform.Translate(new Vector3(_offset, 0, 0) * speed);
