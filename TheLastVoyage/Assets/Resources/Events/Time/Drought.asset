@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fa47378bc042db9261a300f6039868, type: 3}
+  m_Name: Drought
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: our ship is hit by a prolonged period of dry weather,
+    the water sources are scarce and the crew is running low on water. You must decide
+    how to handle the situation, as the drought can affect the crew's health and
+    well-being.
+  <acceptButtonText>k__BackingField: Search
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to take immediate action to find fresh
+    water. You order the crew to ration the water supplies, and you start searching
+    for a freshwater source. You also enforce strict hygiene measures, such as frequent
+    hand washing, and you remind the crew to conserve water. Your decision takes
+    time and resources, but it prevents the crew from dehydrating and keeps the crew
+    healthy.
+  <rejectedText>k__BackingField: You decide to ignore the problem and hope that it
+    will go away on its own. But the drought continues and the water supplies are
+    running low. You must now deal with the consequences of your inaction, and try
+    to find fresh water, but it will take more time and resources, and the morale
+    of the crew is affected.
+  <type>k__BackingField: 1
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _moraleBonus: 5
+  _timeCost: 15
+  _acceptedHungerDrop: 5
+  _rejectedMoraleDrop: 10
+  _rejectedHungerDrop: 5

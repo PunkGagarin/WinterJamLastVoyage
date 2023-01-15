@@ -12,21 +12,21 @@ namespace Core.Events.GameEvents {
 
         [field: SerializeField]
         [field:TextAreaAttribute(5,20)]
-        public string gameEventText { get; private set; }
+        public string gameEventText { get; protected set; }
 
         [field: SerializeField]
-        public string acceptButtonText { get; private set; }
+        public string acceptButtonText { get; protected set; }
 
         [field: SerializeField]
-        public string rejectButtonText { get; private set; }
-
-        [field: SerializeField]
-        [field:TextAreaAttribute(5,20)]
-        public string acceptedText { get; private set; }
+        public string rejectButtonText { get; protected set; }
 
         [field: SerializeField]
         [field:TextAreaAttribute(5,20)]
-        public string rejectedText { get; private set; }
+        public string acceptedText { get; protected set; }
+
+        [field: SerializeField]
+        [field:TextAreaAttribute(5,20)]
+        public string rejectedText { get; protected set; }
 
         // [SerializeField]
         //todo: for future random weight pickup

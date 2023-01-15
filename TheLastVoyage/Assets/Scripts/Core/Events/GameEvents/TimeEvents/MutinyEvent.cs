@@ -7,7 +7,7 @@ using Zenject;
 namespace Core.Events.GameEvents.TimeEvents {
 
     [CreateAssetMenu(menuName = "GameEvent/Time/Mutiny", fileName = "Mutiny")]
-    public class Mutiny : BaseTimeEvent, IGameEvent {
+    public class MutinyEvent : BaseTimeEvent, IGameEvent {
 
         [Inject]
         private GameTimer _gameTimer;

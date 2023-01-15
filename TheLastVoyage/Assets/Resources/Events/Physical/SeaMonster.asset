@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84cfa97b8bf4a1aabddcdec624d7e68, type: 3}
+  m_Name: SeaMonster
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: While sailing, the crew spots a massive sea creature,
+    possibly a giant squid or a whale, swimming near the ship. You must decide whether
+    to investigate or avoid the creature.
+  <acceptButtonText>k__BackingField: Investigate
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to investigate, you order the ship to
+    get closer to the creature, in order to study it or even hunt it. However, this
+    could lead to the ship being damaged, or the crew being injured, by the powerful
+    creature's attacks.
+  <rejectedText>k__BackingField: You decide to avoid the creature, you order the
+    ship to change course and steer away from it. This may prevent the ship and crew
+    from being damaged, but also miss the opportunity to study or hunt the creature.
+  <type>k__BackingField: 4
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _damage: 10
+  _hungerBonus: 30
+  _timeCost: 5
+  _moraleBonus: 5

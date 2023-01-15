@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfaa1a8d6d4a4f0aa114e895dee6cebd, type: 3}
+  m_Name: FairWinds
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: Your ship encounters a period of favorable weather
+    conditions, with strong winds blowing in the direction of your destination. This
+    can speed up your journey and reduce the risk of hazards.
+  <acceptButtonText>k__BackingField: Catch Wind
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to take advantage of the fair winds and
+    set the sails to catch the wind. The ship makes good progress and the journey
+    becomes faster and smoother. However, there is a risk of overworking the crew
+    and overusing the ship's resources.
+  <rejectedText>k__BackingField: You decide to play it safe and keep the ship's current
+    course and speed. The journey may take longer but it will be safer for the ship
+    and the crew. However, the opportunity to make good progress is lost.
+  <type>k__BackingField: 0
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _moraleBonus: 10
+  _timeBonus: 30
+  _hungerCost: 5

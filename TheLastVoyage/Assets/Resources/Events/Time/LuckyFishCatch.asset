@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4125e4510b4266bca6a564f923cd20, type: 3}
+  m_Name: LuckyFishCatch
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: While sailing, the crew manages to catch an especially
+    large and tasty fish. This provides a bountiful meal for the crew and could help
+    replenish the ship's food supplies.
+  <acceptButtonText>k__BackingField: Keep
+  <rejectButtonText>k__BackingField: Rlease
+  <acceptedText>k__BackingField: You decide to take advantage of the catch, the crew
+    is excited and motivated, this could lead to an improvement in morale and better
+    productivity, also the extra food will help sustain the crew's hunger. However,
+    this could lead to overuse of the fishing equipment and risk of not catching
+    more fish in the future.
+  <rejectedText>k__BackingField: You decide to release the fish back to the sea,
+    you want to preserve the fishing resources and avoid overfishing. However, this
+    could lead to disappointment and dissatisfaction among the crew, and you will
+    lose the chance to feed them well.
+  <type>k__BackingField: 6
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _damage: 5
+  _timeCost: 5
+  _hungerBonus: 40
+  _moraleBonus: 10
+  _moralesDrop: 10

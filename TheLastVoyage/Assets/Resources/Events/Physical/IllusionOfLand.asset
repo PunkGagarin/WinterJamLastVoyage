@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51842dfac3954d7190b093466b048834, type: 3}
+  m_Name: IllusionOfLand
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: While sailing, the crew spots what appears to be
+    land on the horizon. However, upon closer inspection, it turns out to be an optical
+    illusion caused by weather conditions or the crew's exhaustion. You must decide
+    whether to investigate or continue on your journey.
+  <acceptButtonText>k__BackingField: Investigate
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: 'You decide to investigate, you order the ship to
+    change course and head towards the supposed land. However, after wasting time
+    and resources, it turns out to be an illusion and the crew becomes disappointed
+    and morale drops. '
+  <rejectedText>k__BackingField: You decide to continue on your original course,
+    knowing that it's an optical illusion and not wasting time and resources. The
+    crew may be disappointed but at least the journey continues with no significant
+    losses.
+  <type>k__BackingField: 3
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _moraleDrop: 10
+  _hungerDrop: 10
+  _timeCost: 10
+  _rejectMoraleDrop: 5

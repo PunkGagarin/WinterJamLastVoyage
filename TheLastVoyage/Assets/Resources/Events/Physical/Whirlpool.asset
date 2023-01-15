@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4d1f104699460584e62c7fc96f6812, type: 3}
+  m_Name: Whirlpool
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: While sailing, the crew spots a massive whirlpool
+    in the water ahead. It poses a significant danger to the ship and the crew. You
+    must decide whether to attempt to navigate through it or avoid it.
+  <acceptButtonText>k__BackingField: Navigate
+  <rejectButtonText>k__BackingField: Avoid
+  <acceptedText>k__BackingField: You decide to attempt to navigate through it, you
+    order the crew to take the necessary precautions and use all the ship's power
+    to try to navigate the ship through the whirlpool. However, this could lead to
+    the ship being damaged or capsized, and the crew being injured or lost.
+  <rejectedText>k__BackingField: You decide to avoid it, you order the ship to change
+    course and steer away from it. This may prevent the ship and crew from being
+    damaged, but also might make the journey longer and consume more resources.
+  <type>k__BackingField: 5
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _damageMin: 1
+  _damageMax: 15
+  _timeBonusMin: -5
+  _timeBonusMax: 25
+  _timeLost: 15

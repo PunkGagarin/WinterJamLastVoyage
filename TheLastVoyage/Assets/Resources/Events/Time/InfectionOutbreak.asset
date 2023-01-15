@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c205ac1b56439895ff0d83a85938ef, type: 3}
+  m_Name: InfectionOutbreak
+  m_EditorClassIdentifier: 
+  <baseEventType>k__BackingField: 0
+  <gameEventText>k__BackingField: An infection outbreak occurs on the ship, affecting
+    the health of the crew. Symptoms include fever, cough, and difficulty breathing.
+    You must decide how to handle the situation, as the infection can spread rapidly
+    and affect the crew's ability to navigate the ship.
+  <acceptButtonText>k__BackingField: Contain
+  <rejectButtonText>k__BackingField: Ignore
+  <acceptedText>k__BackingField: You decide to take immediate action to contain the
+    infection. You order the affected crew members to be quarantined, and you start
+    searching for a cure. You also enforce strict hygiene measures, such as frequent
+    hand washing, and you isolate the infected members of the crew. Your decision
+    takes time and resources, but it prevents the infection from spreading further
+    and keeps the crew healthy.
+  <rejectedText>k__BackingField: You decide to ignore the problem and hope that it
+    will go away on its own. But the infection spreads rapidly, affecting more and
+    more crew members, and it starts to affect the ship's navigation. You must now
+    deal with the consequences of your inaction, and try to contain the infection,
+    but it will take more time and resources, and the morale of the crew is affected.
+  <type>k__BackingField: 2
+  <mapObjectSprite>k__BackingField: {fileID: 0}
+  _acceptedHungerDrop: 10
+  _timeCost: 15
+  _rejectedHungerDrop: 15
+  _rejectedMoraleDrop: 15

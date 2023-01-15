@@ -4,15 +4,13 @@
         Shipwreck,
         Storm,
         Pirates,
-        ShipInDistress,
-        PortInSight,
-        Island,
-        RescueAtSea,
         IllusionOfLand,
         SeaMonster,
         Whirlpool,
-        SunkenTreasure,
-        Fog
+        // Fog,
+        // FriendlyShip,
+        // IdealCurrent,
+        AbundantSeaLife
     }
 
 }

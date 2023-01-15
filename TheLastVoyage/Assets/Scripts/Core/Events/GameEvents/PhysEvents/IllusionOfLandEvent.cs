@@ -6,8 +6,8 @@ using Zenject;
 
 namespace Core.Events.GameEvents.PhysEvents {
 
-    [CreateAssetMenu(menuName = "GameEvent/Physical/Storm", fileName = "Storm")]
-    public class StormEvent : BasePhysicalEvent, IGameEvent {
+    [CreateAssetMenu(menuName = "GameEvent/Physical/IllusionOfLand", fileName = "IllusionOfLand")]
+    public class IllusionOfLandEvent : BasePhysicalEvent, IGameEvent {
 
         [Inject]
         private GameTimer _gameTimer;
@@ -17,35 +17,31 @@ namespace Core.Events.GameEvents.PhysEvents {
 
         [Header("Accept")]
         [SerializeField]
-        private int _moraleBonus;
+        private int _moraleDrop = 10;
         
         [SerializeField]
-        private int _hungerDrop;
+        private int _hungerDrop = 10;
         
         [SerializeField]
-        private int _timeCost;
+        private int _timeCost = 10;
 
         [Header("Reject")]
         [SerializeField]
-        private int _rejectHungerDrop;
-        
-        [SerializeField]
-        private int _damage;
+        private int _rejectMoraleDrop = 5;
 
         private void Awake() {
-            type = PhysEventType.Storm;
+            type = PhysEventType.IllusionOfLand;
         }
 
 
         public override void Apply() {
-            _shipCharacteristics.IncreaseMoraleIndicator(_moraleBonus);
+            _shipCharacteristics.DecreaseMoraleIndicator(_moraleDrop);
             _shipCharacteristics.DecreaseHungerIndicator(_hungerDrop);
             _gameTimer.DecreaseTime(_timeCost);
         }
 
         public override void Reject() {
-            _shipCharacteristics.DecreaseHungerIndicator(_rejectHungerDrop);
-            _shipCharacteristics.DecreaseHealthIndicator(_damage);
+            _shipCharacteristics.DecreaseMoraleIndicator(_rejectMoraleDrop);
         }
     }
 
