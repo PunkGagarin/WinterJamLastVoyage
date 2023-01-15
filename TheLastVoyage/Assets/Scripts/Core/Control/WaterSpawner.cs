@@ -25,6 +25,9 @@ namespace Core.Control {
         [Inject]
         private EventView _eventView;
 
+       [Inject]
+        private DiContainer _diContainer;
+
         private void Start() {
             _firstWaterController.shipController = _shipController;
             _firstWaterController.OnEnterDestroy.AddListener(() => Destroy(_firstWaterController.gameObject));
@@ -34,10 +37,7 @@ namespace Core.Control {
 
         private void SpawnWaterTile() {
             
-            var waterPrefab = _waterPrefab;
-            if (Random.Range(0,100) > 60) {
-                waterPrefab = _waterEventPrefab;
-            }
+            var waterPrefab = _waterEventPrefab;
             
             var water = Instantiate(waterPrefab);
             water.transform.position = _waterSpawnPoint.position;
@@ -46,7 +46,10 @@ namespace Core.Control {
             waterController.OnEnterDestroy.AddListener(() => Destroy(water.gameObject));
             waterController.shipController = _shipController;
             
-            Destroy(water.gameObject, 30f);
+            if (Random.Range(0,100) > 85) {
+               var eventTrigger = _diContainer.InstantiateComponent<GameEventTrigger>(waterController.GameEventTriggerGameobject);
+               eventTrigger.SetActive(true);
+            }
         }
     }
 }

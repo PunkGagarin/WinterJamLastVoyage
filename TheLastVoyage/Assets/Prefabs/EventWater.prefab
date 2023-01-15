@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4509664292283643947
 Transform:
   m_ObjectHideFlags: 0
@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5056027157564089264}
   - component: {fileID: 8666803921848175299}
-  - component: {fileID: 438003760100900044}
   m_Layer: 0
   m_Name: Group 7
   m_TagString: GameEvent
@@ -131,20 +130,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5738218, y: 1, z: 1}
   m_Center: {x: -0.022178974, y: 0, z: 0}
---- !u!114 &438003760100900044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8894020481919663262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f84f501fb71466f8fa5832f37be5f85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameEventSpriteGo: {fileID: 4320303609447632860}
-  _baseGameEvent: {fileID: 11400000, guid: 4afb20af873fa5e429e783ce9c1fa278, type: 2}
 --- !u!1 &8995782505934684965
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104b0cb53f184230800885fb45dc6aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <GameEventTriggerGameobject>k__BackingField: {fileID: 8894020481919663262}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []

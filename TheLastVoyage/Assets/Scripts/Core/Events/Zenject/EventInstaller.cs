@@ -25,6 +25,7 @@ namespace events {
         private GameTimer _gameTimer;
 
         public override void InstallBindings() {
+            /*
             Container.Bind<GameEventPool>()
                 .FromNew()
                 .AsSingle();
@@ -32,11 +33,13 @@ namespace events {
             Container.Bind<TimeEventPool>()
                 .FromNew()
                 .AsSingle();
-
+            */
+                
             Container.Bind<EventView>()
                 .FromInstance(_eventView)
                 .AsSingle();
 
+            /*
             Container.Bind<GameTimer>()
                 .FromInstance(_gameTimer)
                 .AsSingle();
@@ -48,6 +51,7 @@ namespace events {
             Container.Bind<TimeEventController>()
                 .FromInstance(_timeEventController)
                 .AsSingle();
+            */
         }
     }
 

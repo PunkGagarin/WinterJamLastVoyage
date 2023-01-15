@@ -1,23 +1,29 @@
-using Core.Events.GameEvents;
+using Core.Events.GameEvents.PhysEvents;
 using UnityEngine;
 using Zenject;
 
 namespace Core.Events.UI {
     public class GameEventTrigger : MonoBehaviour {
-        [SerializeField] 
-        private GameObject _gameEventSpriteGo;
-        
-        [SerializeField] 
-        private BaseGameEvent _baseGameEvent;
 
+        public void SetActive(bool isActive) {
+            transform.GetChild(0).gameObject.SetActive(isActive);
+        }
+
+        [Inject]
         public EventView eventView { get; set; }
 
         private void OnTriggerEnter(Collider other) {
 
+            if (!transform.GetChild(0).gameObject.activeSelf) {
+                return;
+            }
+            
             if (other.gameObject.tag.Contains("Ship")) {
-                _gameEventSpriteGo.SetActive(false);
+                var baseGameEvent = Resources.Load<StormEvent>("Events/Physical/Storm");
+                eventView.UpdateUiForEvent(baseGameEvent);
 
-                eventView.UpdateUiForEvent(_baseGameEvent);
+                gameObject.SetActive(false);
+
             }
         }
     }
