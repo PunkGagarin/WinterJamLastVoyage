@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ship
   - asteroid
   - DestroyWaterTriggerPoint
+  - OkButton
+  - GameEvent
+  - Ship
   layers:
   - Default
   - TransparentFX
