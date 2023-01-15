@@ -12,6 +12,9 @@ namespace Core.Control {
         [SerializeField]
         private Slider _speedSlider;
       
+        [SerializeField]
+        private ShipCharacteristics _shipCharacteristics;
+      
         public float speed { get; set; }
 
         private float _offset;
@@ -31,10 +34,14 @@ namespace Core.Control {
         private void OnTriggerEnter(Collider other) {
             if (other.gameObject.tag.Contains("Coast")) {
                 _speedSlider.value = 0;
-                _offset = 0;
                 //_ship.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-
+                _shipCharacteristics.DecreaseHealthIndicator(15);
                 StartCoroutine(RotateShip());
+                _offset = 0;
+            }
+
+            if (other.gameObject.tag.Contains("Obstacle")) {
+                _shipCharacteristics.DecreaseHealthIndicator(10);
             }
         }
 
@@ -45,11 +52,13 @@ namespace Core.Control {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, 0f, 0f),  Time.deltaTime * 3);
                 yield return null;
             }
+            _ship.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
 
         private void RotateThings()
         {
             _ship.transform.Translate(new Vector3(_offset, 0, 0) * speed);
+            
             var position = _ship.transform.position;
             _ship.transform.position = new Vector3(position.x, _yPosition, position.z);
 
@@ -66,11 +75,11 @@ namespace Core.Control {
             }
                
             if (Input.GetKey(KeyCode.UpArrow)) {
-                _speedSlider.value += 0.0001f;
+                _speedSlider.value += 0.000001f;
             }
             
             if (Input.GetKey(KeyCode.DownArrow)) {
-                _speedSlider.value -= 0.0001f;
+                _speedSlider.value -= 0.000001f;
             }
         }
 
