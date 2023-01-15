@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: Pirates
   m_EditorClassIdentifier: 
   <baseEventType>k__BackingField: 0
-  <gameEventText>k__BackingField: 
-  <acceptButtonText>k__BackingField: 
-  <rejectButtonText>k__BackingField: 
-  <acceptedText>k__BackingField: 
-  <rejectedText>k__BackingField: 
-  <type>k__BackingField: 0
+  <gameEventText>k__BackingField: While sailing, you spot a ship on the horizon,
+    as it gets closer, you realize that it's a pirate ship. The pirates are known
+    for their ruthless tactics and they will stop at nothing to get what they want.
+    You must decide whether to engage in battle with the pirates or try to outrun
+    them.
+  <acceptButtonText>k__BackingField: Fight
+  <rejectButtonText>k__BackingField: Run
+  <acceptedText>k__BackingField: You decide to engage in battle with the pirates,
+    you order your crew to prepare for battle and you arm yourself. The battle is
+    intense, but your crew is well-trained and determined, and you manage to defeat
+    the pirates. However, the battle takes time, and the ship takes damage, so you
+    must now repair the ship and restore the crew's morale.
+  <rejectedText>k__BackingField: ou decide to outrun the pirates, you order your
+    crew to set a course that will take you away from the pirate ship. The pirates
+    give chase, but your ship is faster and you manage to escape. However, you lose
+    time and resources in the process, and the crew's morale is affected by the close
+    call with the pirates.
+  <type>k__BackingField: 2
   <mapObjectSprite>k__BackingField: {fileID: 0}
   _acceptDamage: 20
   _acceptTimeCost: 15
