@@ -1,4 +1,4 @@
-﻿namespace GameSession.Events.Types {
+﻿namespace Core.Events.Types {
 
     public enum TimeEventType {
         Mutiny,

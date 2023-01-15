@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace events {
+namespace Core.Events.UI {
 
     [RequireComponent(typeof(Button))]
     public class EventButton : MonoBehaviour {
