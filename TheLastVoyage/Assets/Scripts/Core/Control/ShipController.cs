@@ -10,6 +10,9 @@ namespace Core.Control {
         private GameObject _ship;
         
         [SerializeField]
+        private SpriteRenderer _shipImage;
+        
+        [SerializeField]
         private Slider _speedSlider;
       
         [SerializeField]
@@ -19,13 +22,28 @@ namespace Core.Control {
 
         private float _offset;
         private float _yPosition;
+        private bool _isDie;
 
         private void Start() {
             _yPosition = _ship.transform.position.y;
+            
+            _shipCharacteristics.OnDie.AddListener(Die);
+        }
+
+        private void Die() {
+            _isDie = true;
+            _speedSlider.value = 0;
+            speed = 0;
+
+            StartCoroutine(DieAnimationRoutine());
         }
 
         private void Update()
         {
+            if (_isDie) {
+                return;
+            }
+            
             speed = _speedSlider.value;
             
             RotateThings(); 
@@ -53,6 +71,20 @@ namespace Core.Control {
                 yield return null;
             }
             _ship.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        
+        private IEnumerator DieAnimationRoutine() {
+
+            if (_shipImage.color.a <= 0) {
+                yield break;
+            }
+            
+            var tempColor = _shipImage.color;
+            tempColor.a -= 0.1f;
+            _shipImage.color = tempColor;
+            yield return new WaitForSeconds(0.1f);
+            
+            StartCoroutine(DieAnimationRoutine());
         }
 
         private void RotateThings()

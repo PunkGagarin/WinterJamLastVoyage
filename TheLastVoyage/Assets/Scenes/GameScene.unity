@@ -1174,6 +1174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ship: {fileID: 648072463}
+  _shipImage: {fileID: 648072464}
   _speedSlider: {fileID: 1332841669}
   _shipCharacteristics: {fileID: 648072469}
 --- !u!65 &648072468
@@ -1207,6 +1208,9 @@ MonoBehaviour:
   _hungerIndicatorText: {fileID: 831607292}
   _moraleIndicatorText: {fileID: 1935541418}
   _healthIndicatorText: {fileID: 1967372943}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &649230472
 GameObject:
   m_ObjectHideFlags: 0

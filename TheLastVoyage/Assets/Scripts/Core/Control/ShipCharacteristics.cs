@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Core.Control {
@@ -24,6 +25,9 @@ namespace Core.Control {
         
         [SerializeField] 
         private TextMeshProUGUI _healthIndicatorText;
+        
+        [HideInInspector]
+        public UnityEvent OnDie = new UnityEvent();
         
         public void IncreaseHungerIndicator(int value) {
             _hungerIndicatorText.text = $"+{value.ToString()}";
@@ -78,6 +82,10 @@ namespace Core.Control {
             StartCoroutine(WaitHandler(() => _healthIndicatorText.gameObject.SetActive(false)));
             
             _healthIndicatorSlider.value -= value;
+
+            if (_healthIndicatorSlider.value <= 0) {
+                OnDie?.Invoke();
+            }
         }
         
         private IEnumerator WaitHandler(Action then) {
