@@ -75,11 +75,11 @@ namespace Core.Control {
             }
                
             if (Input.GetKey(KeyCode.UpArrow)) {
-                _speedSlider.value += 0.000001f;
+                _speedSlider.value += 0.00001f;
             }
             
             if (Input.GetKey(KeyCode.DownArrow)) {
-                _speedSlider.value -= 0.000001f;
+                _speedSlider.value -= 0.00001f;
             }
         }
 
