@@ -1,11 +1,14 @@
-﻿using Core.Control;
+﻿using System;
+using Core.Control;
+using Core.Events.GameEvents.TimeEvents;
+using Core.Events.Types;
 using GameSession;
 using UnityEngine;
 using Zenject;
 
 namespace Core.Events.GameEvents.PhysEvents {
 
-    [CreateAssetMenu(menuName = "GameEvent/Time/Mutiny", fileName = "Mutiny")]
+    [CreateAssetMenu(menuName = "GameEvent/Physical/Storm", fileName = "Storm")]
     public class StormEvent : BasePhysicalEvent, IGameEvent {
 
         [Inject]
@@ -30,6 +33,10 @@ namespace Core.Events.GameEvents.PhysEvents {
         
         [SerializeField]
         private int _damage;
+
+        private void Awake() {
+            type = PhysEventType.Storm;
+        }
 
 
         public override void Apply() {
