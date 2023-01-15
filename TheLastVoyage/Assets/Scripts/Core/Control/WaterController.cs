@@ -21,7 +21,7 @@ namespace Core.Control {
         private void OnTriggerEnter(Collider other) {
             if (other.gameObject.tag.Contains("DestroyWaterTriggerPoint")) {
                 OnEnterDestroy?.Invoke();
-            } else {
+            } else if (other.gameObject.tag.Contains("SpawnWaterTriggerPoint")) {
                 OnEnter?.Invoke();
             }
         }

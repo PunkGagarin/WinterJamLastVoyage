@@ -9,6 +9,7 @@ TagManager:
   - OkButton
   - GameEvent
   - Ship
+  - SpawnWaterTriggerPoint
   layers:
   - Default
   - TransparentFX

@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 1628485702}
   m_Layer: 0
   m_Name: SpawnWaterTriggerPoint
-  m_TagString: Untagged
+  m_TagString: SpawnWaterTriggerPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

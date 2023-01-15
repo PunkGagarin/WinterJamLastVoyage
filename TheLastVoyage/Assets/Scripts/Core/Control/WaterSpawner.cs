@@ -45,8 +45,10 @@ namespace Core.Control {
             waterController.OnEnter.AddListener(SpawnWaterTile);
             waterController.OnEnterDestroy.AddListener(() => Destroy(water.gameObject));
             waterController.shipController = _shipController;
+            waterController.GameEventTriggerGameobject.SetActive(false);
             
-            if (Random.Range(0,100) > 85) {
+            if (Random.Range(0,100) > 65) {
+                waterController.GameEventTriggerGameobject.SetActive(true);
                var eventTrigger = _diContainer.InstantiateComponent<GameEventTrigger>(waterController.GameEventTriggerGameobject);
                eventTrigger.SetActive(true);
             }
