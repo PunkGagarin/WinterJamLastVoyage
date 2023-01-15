@@ -42,7 +42,7 @@ namespace GameSession {
             _currentIntTimer = time;
             UpdateTimerUI(time);
 
-            if (time == 0) {
+            if (time <= 0) {
                 OnTimerFinished.Invoke();
             } else {
                 OnTimerTick.Invoke(time);
@@ -64,6 +64,20 @@ namespace GameSession {
 
         public void StopTimer() {
             _isTimerWorking = false;
+        }
+
+        public void DecreaseTime(int timeToDecrease) {
+            _currentIntTimer -= timeToDecrease;
+            _currentTimer -= timeToDecrease;
+            
+            UpdateTimerUI(_currentIntTimer);
+        }
+        
+        public void IncreaseTime(int timeToIncrease) {
+            _currentIntTimer += timeToIncrease;
+            _currentTimer += timeToIncrease;
+            
+            UpdateTimerUI(_currentIntTimer);
         }
     }
 
