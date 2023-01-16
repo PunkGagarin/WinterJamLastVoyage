@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameSession.Events.UI {
+namespace Core {
     public class EventTrigger : MonoBehaviour {
 
         [SerializeField] 
