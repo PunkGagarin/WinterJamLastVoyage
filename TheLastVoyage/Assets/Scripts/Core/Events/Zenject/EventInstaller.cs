@@ -1,13 +1,8 @@
-﻿using Core.Events;
-using Core.Events.Pools;
-using Core.Events.Types;
-using Core.Events.UI;
-using GameSession;
+﻿using Core.Events.UI;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
-namespace events {
+namespace Core.Events.Zenject {
 
     public class EventInstaller : MonoInstaller {
 

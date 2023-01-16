@@ -1,5 +1,4 @@
 ﻿using Core.Events.Types;
-using events;
 using UnityEngine;
 
 namespace Core.Events.GameEvents {
