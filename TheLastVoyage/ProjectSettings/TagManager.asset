@@ -10,6 +10,8 @@ TagManager:
   - GameEvent
   - Ship
   - SpawnWaterTriggerPoint
+  - Obstacle
+  - Coast
   layers:
   - Default
   - TransparentFX
