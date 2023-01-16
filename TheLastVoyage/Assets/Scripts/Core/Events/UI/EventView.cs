@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Core.Events.GameEvents;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace Core.Events.UI {
         private const string DefaultRejectText = "Reject";
 
         private BaseGameEvent _currentEvent;
+
+        private int _currentEventTimer;
 
         [SerializeField]
         private GameObject _contentPanel;
@@ -28,6 +31,13 @@ namespace Core.Events.UI {
         [SerializeField]
         private Button _okayButton;
 
+        [Header("Timer")]
+        [SerializeField]
+        private TextMeshProUGUI _timerText;
+
+        [SerializeField]
+        private int _eventTimer;
+
         private List<EventButton> _eventButtons;
 
 
@@ -40,18 +50,20 @@ namespace Core.Events.UI {
 
         private void AcceptEvent() {
             HideButtons();
+
             _currentEvent.Apply();
             ShowEventText(_currentEvent.acceptedText);
         }
 
-        private void ShowEventText(string currentEventAcceptedText) {
+        private void ShowEventText(string currentEventText) {
+            _eventText.text = currentEventText;
         }
 
         private void RejectEvent() {
             HideButtons();
 
-            ShowEventText(_currentEvent.rejectedText);
             _currentEvent.Reject();
+            ShowEventText(_currentEvent.rejectedText);
         }
 
         public void UpdateUiForEvent(BaseGameEvent baseGameEvent) {
@@ -65,6 +77,11 @@ namespace Core.Events.UI {
             }
             if (baseGameEvent.rejectButtonText != null) {
                 _rejectButton.GetComponentInChildren<TextMeshProUGUI>().text = baseGameEvent.rejectButtonText;
+            }
+
+            if (_timerText != null) {
+                _currentEventTimer = _eventTimer;
+                StartCoroutine(StartEventTimer());
             }
         }
 
@@ -84,10 +101,30 @@ namespace Core.Events.UI {
         }
 
         private void HideButtons() {
+            StopAllCoroutines();
             SetDefaultButtonsText();
             _acceptButton.gameObject.SetActive(false);
             _rejectButton.gameObject.SetActive(false);
             ShowOkayButton();
+        }
+
+
+        private IEnumerator StartEventTimer() {
+            while (_currentEventTimer > 0) {
+                yield return new WaitForSeconds(1f);
+                _currentEventTimer--;
+                _timerText.text = _currentEventTimer.ToString();
+            }
+            ChooseRandomOption();
+        }
+
+        private void ChooseRandomOption() {
+            int rnd = Random.Range(0, 2);
+            if (rnd == 0) {
+                AcceptEvent();
+            } else {
+                RejectEvent();
+            }
         }
 
         private void SetDefaultButtonsText() {
