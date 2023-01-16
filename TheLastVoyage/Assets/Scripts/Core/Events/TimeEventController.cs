@@ -1,7 +1,6 @@
 ﻿using Core.Events.GameEvents.TimeEvents;
 using Core.Events.Pools;
 using Core.Events.UI;
-using GameSession;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
